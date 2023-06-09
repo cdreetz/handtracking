@@ -54,7 +54,8 @@ def main():
         success, img = cap.read()
         img = detector.findHands(img)
         lmList = detector.findPosition(img)
-        print(lmList[8])
+        if len(lmList) != 0:
+            print(lmList[8])
 
         cTime = time.time()
         fps = 1/(cTime-pTime)
